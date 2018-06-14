@@ -8,35 +8,7 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Hello World")
+    SearchPage{
 
-    SwipeView {
-        id: swipeView
-        anchors.fill: parent
-        currentIndex: tabBar.currentIndex
-
-        SearchPage{
-
-        }
-        VideoList {
-        }
-        SearchBar
-        {
-        }
-
-
-    }
-
-    footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
-        TabButton {
-            text: qsTr("SearchPage")
-        }
-        TabButton {
-            text: qsTr("VideoList")
-        }
-        TabButton {
-            text: qsTr("SearchBar")
-        }
     }
 }

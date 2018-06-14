@@ -3,8 +3,6 @@
         <file>SearchBar.qml</file>
         <file>SearchPage.qml</file>
         <file>main.qml</file>
-        <file>Page1.qml</file>
-        <file>Page1Form.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>VideoList.qml</file>
     </qresource>
