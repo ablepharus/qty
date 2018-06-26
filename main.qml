@@ -1,6 +1,6 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.0
+import QtQuick 2.9
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.11
 
 ApplicationWindow {
     visible: true
@@ -9,6 +9,6 @@ ApplicationWindow {
     height: 480
     title: qsTr("Hello World")
     SearchPage{
-
+        anchors.fill: parent
     }
 }
