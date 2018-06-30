@@ -18,9 +18,10 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
     QHash<int, QByteArray> roleNames() const {	return m_roleNames;	}
-private:
+protected:
     QJsonArray jsonObjects;
     QHash<int, QByteArray> m_roleNames;
+    QHash<QByteArray, int> m_roleNumbers;
     void generateRoleNames();
 };
 

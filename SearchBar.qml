@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.3
 
 Rectangle {
     signal searchClick()
-    onSearchClick: console.log('Go search ' + searchText.text)
+    onSearchClick: videosModel.query(searchText.text)
     height: searchText.height + 20
     width: window.height
     RowLayout
@@ -27,6 +27,7 @@ Rectangle {
             Layout.fillWidth: true
             id: searchText
             width: parent.width
+            onEditingFinished: searchClick()
         }
         Button
         {

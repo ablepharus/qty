@@ -4,7 +4,8 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     qjsonmodel.cpp \
-    qjsonlistmodel.cpp
+    qjsonlistmodel.cpp \
+    videolistmodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     qjsonmodel.h \
-    qjsonlistmodel.h
+    qjsonlistmodel.h \
+    videolistmodel.h
