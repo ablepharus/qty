@@ -18,6 +18,7 @@
 
 #include "qjsonlistmodel.h"
 #include "videolistmodel.h"
+#include "videoplayer.h"
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -25,11 +26,13 @@ int main(int argc, char *argv[])
 
 
     auto videoListModel = new VideoListModel{};
+    auto videoPlayer = new VideoPlayer{};
     // qmlRegisterType<VideoListModel>("org.qoutuber", "", 1, 0, "VideoListModel");
     qDebug() << "Thats it";
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextProperty("videosModel", videoListModel);
+    engine.rootContext()->setContextProperty("videoPlayer", videoPlayer);
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
     return app.exec();

@@ -65,7 +65,7 @@ ListView {
         }
 
         MouseArea {
-            onClicked: videosModel.play(url)
+            onClicked: videoPlayer.play(url)
             anchors.fill: parent
             hoverEnabled: true
             onHoveredChanged: {
