@@ -30,7 +30,7 @@ void QJsonListModel::generateRoleNames()
 {
     m_roleNames.clear();
     int id = 1;
-    qDebug() << "generateRoleNames: " << jsonObjects.first().toObject();
+    // qDebug() << "generateRoleNames: " << jsonObjects.first().toObject();
     for (auto key : jsonObjects.first().toObject().keys()) {
         auto new_id = Qt::UserRole + id++;
         m_roleNames.insert(new_id, key.toUtf8());
@@ -44,13 +44,20 @@ void QJsonListModel::load(QByteArray arr)
     QJsonParseError err;
     auto jsonDocument = QJsonDocument::fromJson(arr, &err);
     qDebug() << err.error;
+    load(jsonDocument.array());
+
+}
+
+void QJsonListModel::load(QJsonArray arr)
+{
     beginResetModel();
-    jsonObjects = jsonDocument.array();
-    qDebug() << jsonDocument.array().size();
-    qDebug() << jsonDocument.array()[0].toObject().keys();
-    qDebug() << jsonDocument.array()[1].toObject()["name"];
-    qDebug() << QJsonValue(jsonDocument.object()["name"]);
-    qDebug() << jsonDocument.object();
+    jsonObjects = arr;
+    qDebug() << arr.size();
+    qDebug() << arr[0].toObject().keys();
+    qDebug() << arr[1].toObject()["name"];
+    //qDebug() << QJsonValue(jsonDocument.object()["name"]);
+    //qDebug() << jsonDocument.object();
     generateRoleNames();
     endResetModel();
 }
+

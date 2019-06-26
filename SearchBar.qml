@@ -6,7 +6,7 @@ Rectangle {
     signal searchClick()
     onSearchClick: videosModel.query(searchText.text)
     height: searchText.height + 20
-    width: window.height
+
     RowLayout
     {
         id: rowLayout
@@ -21,6 +21,7 @@ Rectangle {
 
 
         spacing: 0
+
         TextField
         {
             focus: true

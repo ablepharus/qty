@@ -1,12 +1,14 @@
 QT += qml quick xml xmlpatterns
 
 CONFIG += c++11
+LIBS +=  -lVLCQtQml -lvlc -lVLCQtCore
 
 SOURCES += main.cpp \
     qjsonmodel.cpp \
     qjsonlistmodel.cpp \
     videolistmodel.cpp \
-    videoplayer.cpp
+    videoplayer.cpp \
+    youtubesearcher.cpp
 
 RESOURCES += qml.qrc
 
@@ -36,4 +38,7 @@ HEADERS += \
     qjsonmodel.h \
     qjsonlistmodel.h \
     videolistmodel.h \
-    videoplayer.h
+    videoplayer.h \
+    youtubesearcher.h
+
+QMAKE_LFLAGS += -rdynamic

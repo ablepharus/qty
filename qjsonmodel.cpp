@@ -196,7 +196,6 @@ bool QJsonModel::loadJson(const QByteArray &json)
     return false;
 }
 
-
 QVariant QJsonModel::data(const QModelIndex &index, int role) const
 {
 

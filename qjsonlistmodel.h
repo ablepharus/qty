@@ -10,14 +10,15 @@ class QJsonListModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit QJsonListModel(QObject *parent = 0);
+    explicit QJsonListModel(QObject *parent = nullptr);
     void load(QByteArray arr);
+    void load(QJsonArray arr);
 
     QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const Q_DECL_OVERRIDE;
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
-    QHash<int, QByteArray> roleNames() const {	return m_roleNames;	}
+    QHash<int, QByteArray> roleNames() const override {	return m_roleNames;	}
 protected:
     QJsonArray jsonObjects;
     QHash<int, QByteArray> m_roleNames;
