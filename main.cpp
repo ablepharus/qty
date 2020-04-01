@@ -19,6 +19,7 @@
 #include "qjsonlistmodel.h"
 #include "videolistmodel.h"
 #include "videoplayer.h"
+#include "playlist.h"
 
 #include <VLCQtCore/Common.h>
 #include <VLCQtCore/MediaList.h>
@@ -61,8 +62,8 @@ int main(int argc, char *argv[])
     //                        << "--http-user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"};
     //auto mediaListPlayer = new VlcMediaListPlayer{&vlcInstance};
 
-    qDebug()    << VlcCommon::setPluginPath("/usr/lib/vlc/lua/playlist/")
-                << VlcCommon::args();
+    //qDebug()    << VlcCommon::setPluginPath("/usr/lib/vlc/lua/playlist/")
+    //            << VlcCommon::args();
     //VlcQmlVideoPlayer::registerPlugin();
     //
 
@@ -81,14 +82,15 @@ int main(int argc, char *argv[])
     //vlcPl.setAutoplay(true);
     //vlcPl.play();
     qDebug() << "" //mediaListPlayer->mediaPlayer()->dumpObjectInfo()
-             << ""//mediaListPlayer->mediaPlayer()->video()->dumpObjectInfo()
+             << ""//mediaListPlayer-p>mediaPlayer()->video()->dumpObjectInfo()
              << "AAAAA" //mediaListPlayer->mediaPlayer()->video()->dumpObjectTree()
              << "" ;//mediaListPlayer->mediaPlayer()->video()->trackDescription();
 
     YoutubeDl ytService{};
     auto videoListModel = new VideoListModel{};
     auto videoPlayer = new YoutubePlayer{};
-    // qmlRegisterType<VideoListModel>("org.qoutuber", "", 1, 0, "VideoListModel");
+    qmlRegisterType<Playlist>("org.qoutuber", 1, 0, "Playlist");
+    qmlRegisterType<VideoListModel>("org.qoutuber", 1, 0, "VideoListModel");
     qDebug() << "Thats it";
     QQmlApplicationEngine engine;
     //((VlcQmlSource*) engine.rootContext()->property("m_vp").data())->setPlayer(mediaListPlayer->mediaPlayer());

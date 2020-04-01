@@ -4,6 +4,7 @@ CONFIG += c++11
 LIBS +=  -lVLCQtQml -lvlc -lVLCQtCore
 
 SOURCES += main.cpp \
+    playlist.cpp \
     qjsonmodel.cpp \
     qjsonlistmodel.cpp \
     videolistmodel.cpp \
@@ -35,6 +36,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    playlist.h \
     qjsonmodel.h \
     qjsonlistmodel.h \
     videolistmodel.h \
@@ -42,3 +44,7 @@ HEADERS += \
     youtubesearcher.h
 
 QMAKE_LFLAGS += -rdynamic
+
+DISTFILES += \
+    Readme.md \
+    TestListView.qml

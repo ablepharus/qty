@@ -62,7 +62,7 @@ QByteArray YoutubeDl::_run(QString program, QStringList parameter)
 
     m_process.start(program, parameter);
 
-    if(!m_process.waitForFinished())
+    if(!m_process.waitForFinished(130000))
     {
         qDebug() << m_process.errorString();
     }

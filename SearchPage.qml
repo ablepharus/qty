@@ -19,19 +19,11 @@ Rectangle {
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
-        VideoList {
-            clip: true
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            opacity: 1
-
-            BusyIndicator{
-                opacity: 0.95
-                running: videosModel.isBusy
-
-                anchors.fill: parent
-            }
+        SearchResultList
+        {
+            id: resultList
         }
+
 
     }
 }

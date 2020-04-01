@@ -45,6 +45,26 @@ void VideoListModel::setModelData(QByteArray jsonBa)
     emit isBusyChanged(false);
 }
 
+void VideoListModel::addModelData(QByteArray json)
+{
+    qDebug() << "Read query size: " << json.size();
+    auto jd = QJsonDocument{};
+    QJsonParseError err;
+    jd = QJsonDocument::fromJson(json, &err);
+    if(err.error != QJsonParseError::NoError || jd.isNull())
+        qDebug() <<"Parsing Error: " << err.error << err.offset;
+    qDebug() << "Is Arr, Is Obj, IsEmpty: " << jd.isArray() << jd.isObject() << jd.isEmpty();
+    qDebug() << "Keys: " << jd.object().keys() << jd.object().count();
+    qDebug() << "Arr?: " << jd["entries"].toArray().size() << jd.array().count();
+    qDebug() << "Entries size: " << jd.object()["entries"].toArray().size();
+    load(jd["entries"].toArray());
+
+    //qDebug() << m_roleNumbers.keys();
+    emit listChanged();
+    this->m_isBusy = false;
+    emit isBusyChanged(false);
+}
+
 void VideoListModel::finishedQuery()
 {
     setModelData(m_queryWatcher.result());

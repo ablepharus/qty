@@ -6,5 +6,8 @@
         <file>qtquickcontrols2.conf</file>
         <file>VideoList.qml</file>
         <file>Playlist.qml</file>
+        <file>VideoItem.qml</file>
+        <file>SearchResultList.qml</file>
+        <file>DraggableItem.qml</file>
     </qresource>
 </RCC>

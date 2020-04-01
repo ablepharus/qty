@@ -3,8 +3,12 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
 Rectangle {
+    property string search_text: searchText.text
     signal searchClick()
-    onSearchClick: videosModel.query(searchText.text)
+    onSearchClick: {
+        searchText.focus = true
+        videosModel.query(search_text)
+    }
     height: searchText.height + 20
 
     RowLayout
@@ -28,7 +32,9 @@ Rectangle {
             Layout.fillWidth: true
             id: searchText
             width: parent.width
-            onEditingFinished: searchClick()
+            onAccepted: searchClick()
+            text: "everything wrong with"
+            //onEditingFinished: searchClick()
         }
         Button
         {

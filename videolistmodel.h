@@ -25,6 +25,7 @@ public slots:
         void query(QString query, int count=10);
 private slots:
         void setModelData(QByteArray jsonBa);
+        void addModelData(QByteArray jsonBa);
     signals:
         void listChanged();
         void isBusyChanged(const bool isBusy);
