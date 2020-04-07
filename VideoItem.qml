@@ -95,13 +95,21 @@ MouseArea {
                 id: column
                 anchors.fill: parent
 
-                Kirigami.Heading {
-                    // top has to lie on a line with img top
-                    id: titleHeading
-                    text: title;
-                    level: 2;
+                Label {
+                    text: title
+                    topPadding: -7
+                    textFormat: Text.RichText
+                    wrapMode: Text.NoWrap
+                    //Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                    font.weight: Font.bold
                     style: "Raised"
+                    //font.bold: true
+                    font.pointSize: font.pointSize * 1.1
+                    verticalAlignment: Text.AlignTop
+                    topInset: 0
+                    // topPadding: 0
                 }
+
                 RowLayout {
                     id: lowerHeading
                     //anchors.left: parent.left; anchors.right: parent.right
@@ -129,6 +137,8 @@ MouseArea {
 
                 Label {
                     text: "%1 views".arg(view_count)
+                    bottomPadding: -4
+                    leftPadding: 0
                     //transformOrigin: Item.Center
                     //anchors.bottom: parent.bottom
                     //anchors.bottomMargin: 0

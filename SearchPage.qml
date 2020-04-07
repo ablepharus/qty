@@ -4,10 +4,6 @@ import QtQuick.Controls 2.2
 import QtQuick.Controls 2.5
 
 Rectangle {
-    //anchors.fill: parent
-    Layout.fillHeight: true
-    Layout.minimumWidth: 300
-    Layout.preferredWidth: 333
     clip: true
     ColumnLayout {
         anchors.fill: parent

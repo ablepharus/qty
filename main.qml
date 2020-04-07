@@ -39,7 +39,8 @@ ApplicationWindow {
             id: searchPage
             Layout.fillWidth: false
             Layout.fillHeight: true
-            Layout.preferredWidth: 442
+            Layout.preferredWidth: 600
+            Layout.minimumWidth: 600
         }
         Rectangle{
             focus: true
@@ -106,7 +107,7 @@ ApplicationWindow {
             color: "black"
         }
         Playlist {
-            width: 332
+            width: 600
         }
     }
 }
