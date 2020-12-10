@@ -47,4 +47,5 @@ QMAKE_LFLAGS += -rdynamic
 
 DISTFILES += \
     Readme.md \
-    TestListView.qml
+    TestListView.qml \
+    dummydata/videosModel.qml

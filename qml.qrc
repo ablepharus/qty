@@ -9,5 +9,6 @@
         <file>VideoItem.qml</file>
         <file>SearchResultList.qml</file>
         <file>DraggableItem.qml</file>
+        <file>DraggableVideoItem.qml</file>
     </qresource>
 </RCC>

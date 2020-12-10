@@ -17,7 +17,7 @@ Item {
         currentIndex: videoPlayer.playlist.currentTrackIndex
         highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
 
-        delegate: VideoItem {
+        delegate: DraggableVideoItem {
             property ListView myView: playlistView
             onClicked: videoPlayer.playlist.playAt(index)
 

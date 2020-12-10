@@ -11,7 +11,7 @@ ListView {
     snapMode: ListView.SnapToItem
 
     highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
-    delegate: VideoItem {
+    delegate: DraggableVideoItem {
         property ListView myView: videoListView
         onClicked:  {
                        //videoPlayer.play(itemAt(index, 0)["formats"])
@@ -54,7 +54,8 @@ ListView {
 
 
 
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/

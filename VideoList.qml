@@ -7,12 +7,33 @@ import org.kde.kirigami 2.4 as Kirigami
 ListView {
     id: videoListView
     model: videosModel
+//    model: ListModel {
+//        ListElement {
+//            title: "Everything Wrong With Return of the Jedi"
+//            thumbnail: "https://i.ytimg.com/vi/deMGCdOZS-Y/maxresdefault.jpg"
+//            duration: 1214
+//            uploader: "CinemaSins"
+//            view_count: 402018
+//            upload_date: 20190608
+//            description: "blablblblblblbllb"
+//        }
+
+//                ListElement {
+//            title: "Everything "
+//            thumbnail: "https://i.ytimg.com/vi/deMGCdOZS-Y/maxresdefault.jpg"
+//            duration: 1214
+//            uploader: "CinemaSins"
+//            view_count: 402018
+//            upload_date: 20190608
+//            description: "blablblblblblbllb"
+//        }
+//    }
     clip: true
     snapMode: ListView.SnapToItem
 
     highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
 
-    delegate: VideoItem {
+    delegate: DraggableVideoItem {
         anchors.left: parent.left; anchors.right: parent.right
         property ListView myView: videoListView
         onClicked:  {
